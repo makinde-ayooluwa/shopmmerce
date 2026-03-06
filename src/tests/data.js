@@ -13,4 +13,11 @@ export const products = [
     price: 2000,
     currency: "NGN",
   },
+  {
+    id: 3,
+    name: "Ata Rodo Pepper",
+    image: "/vite.svg",
+    price: 2000,
+    currency: "NGN",
+  },
 ];
