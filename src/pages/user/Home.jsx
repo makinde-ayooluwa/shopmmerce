@@ -20,6 +20,9 @@ export default function Home() {
             placeholder="Search for products"
             type="text"
           />
+          <button>
+            Search
+          </button>
         </div>
       </div>
     </>
