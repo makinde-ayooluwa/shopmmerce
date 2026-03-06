@@ -58,7 +58,12 @@ export default function Home() {
                 width: "95%",
               }}
             >
-              <img src={product.image} style={{width:"100%"}} alt="" />
+              <div style={{height:"200px",overflow: 'hidden',}}>
+                <img src={product.image} style={{width:"100%",height:"auto"}} alt="" />
+              </div>
+              <div>
+                
+              </div>
             </div>
           </div>
         ))}
