@@ -1,4 +1,4 @@
-export default function Search() {
+export default function Search({searchQuery, setSearchQuery}) {
   return (
     <>
       <div
@@ -16,13 +16,12 @@ export default function Search() {
           }}
         >
           <input
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             style={{ padding: "10px", width: "400px" }}
             placeholder="Search for products"
             type="text"
           />
-          <button style={{ padding: "12.5px" }}>
-            <i className="bi bi-search"></i>
-          </button>
         </div>
       </div>
     </>
