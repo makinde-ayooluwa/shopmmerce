@@ -1,5 +1,4 @@
 export default function Home() {
-  
   return (
     <>
       <div
@@ -8,8 +7,19 @@ export default function Home() {
           overflow: "hidden",
         }}
       >
-        <div style={{ display: "flex", justifyContent: "center", gap: 10 }}>
-          <input type="text" />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: 10,
+            padding: "20px",
+          }}
+        >
+          <input
+            style={{ padding: "10px", width: "400px" }}
+            placeholder="Search for products"
+            type="text"
+          />
         </div>
       </div>
     </>
