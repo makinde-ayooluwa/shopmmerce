@@ -58,11 +58,25 @@ export default function Home() {
                 width: "95%",
               }}
             >
-              <div style={{height:"200px",overflow: 'hidden',}}>
-                <img src={product.image} style={{width:"100%",height:"auto"}} alt="" />
+              <div style={{ height: "200px", overflow: "hidden" }}>
+                <img
+                  src={product.image}
+                  style={{ width: "100%", height: "auto" }}
+                  alt=""
+                />
               </div>
-              <div>
-                
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <h3>{product.name}</h3>
+                <div>
+                  <span style={{ fontWeight: "bolder", color:"rgb(21, 255, 0)" }}>{product.currency}</span>
+                  <span style={{fontWeight:"bold"}}>{product.price}</span>
+                </div>
               </div>
             </div>
           </div>
