@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Search from "../../components/user/Search";
 import { products } from "../../tests/data";
+import Alert from "../../resources/Alert";
 
 export default function Home() {
+  const alertDisplay = useRef(null);
+
   const [searchQuery, setSearchQuery] = useState("");
   const [dbProducts, setDbProducts] = useState(products); // <-- use state
   const productGrid = () => {
@@ -37,16 +40,32 @@ export default function Home() {
     fetchData(searchQuery);
   }, [searchQuery]);
 
+  function addToCart(id) {
+    const cart = localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+    const product = products.find((x) => x.id == id);
+    const productIsInCart = cart.find((x) => x.id == id);
+    if (product && !productIsInCart) {
+      cart.push(product);
+      localStorage.setItem("cart", JSON.stringify(cart));
+        const alertText = new Alert().success();
+        alertDisplay.current.appendChild(alertText);
+    }
+  }
+
   return (
     <>
       <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <div ref={alertDisplay}>Hi</div>
       <div
         style={{
           display: "flex",
           flexWrap: "wrap",
         }}
       >
-        {dbProducts.map((product) => (
+        {
+          dbProducts.map((product) => (
           <div
             style={{ flex: "0 0 auto", ...productAdditionalStyle }}
             key={product.id}
@@ -68,23 +87,51 @@ export default function Home() {
               <div
                 style={{
                   display: "flex",
-                  justifyContent: "space-between",
+                  justifyContent: "center",
                   alignItems: "center",
+                  padding: 20,
                 }}
               >
                 <h3>{product.name}</h3>
-                <div>
-                  <span
-                    style={{ fontWeight: "bolder", color: "rgb(85, 85, 85)" }}
-                  >
-                    {product.currency}
-                  </span>
-                  <span style={{ fontWeight: "bold" }}>{product.price}</span>
-                </div>
+              </div>
+              <div style={{ textAlign: "center", padding: 20 }}>
+                <span
+                  style={{ fontWeight: "bolder", color: "rgb(85, 85, 85)" }}
+                >
+                  {product.currency}
+                </span>
+                <span style={{ fontWeight: "bold" }}>{product.price}</span>
+              </div>
+              <div
+                style={{
+                  alignSelf: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  padding: 20,
+                }}
+              >
+                <button
+                  onClick={() => {
+                    addToCart(product.id);
+                  }}
+                  style={{
+                    border: "none",
+                    cursor: "pointer",
+                    width: "50%",
+                    justifySelf: "center",
+                    padding: 10,
+                    borderRadius: 12,
+                    background: "#ea3",
+                    color: "#fff",
+                  }}
+                >
+                  <i className="bi bi-cart"></i>
+                </button>
               </div>
             </div>
           </div>
-        ))}
+        ))
+        }
       </div>
     </>
   );
