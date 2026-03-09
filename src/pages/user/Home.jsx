@@ -75,7 +75,7 @@ export default function Home() {
                 <h3>{product.name}</h3>
                 <div>
                   <span
-                    style={{ fontWeight: "bolder", color: "rgb(21, 255, 0)" }}
+                    style={{ fontWeight: "bolder", color: "rgb(85, 85, 85)" }}
                   >
                     {product.currency}
                   </span>
