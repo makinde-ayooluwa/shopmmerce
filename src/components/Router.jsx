@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import Home from "../pages/user/Home";
 import Header from "./user/Header";
 
@@ -6,13 +6,13 @@ export default function Router() {
   return (
     <>
       <BrowserRouter>
-        <Header />
         <Routes>
           <Route
             index
             element={
               <>
-                <Home/>
+                <Header />
+                <Home />
               </>
             }
           />
@@ -20,10 +20,23 @@ export default function Router() {
             path="/categories"
             element={
               <>
-                <Home />
+                <Header />
+                <h1>Categories</h1>
               </>
             }
           />
+          <Route
+            path="/admin"
+            element={
+              <>
+                <h1>Sidebar</h1>
+                <Outlet />
+              </>
+            }
+          >
+            <Route index element={<>Dashboard</>} />
+            <Route path="dashboard" element={<>Dashboard</>} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

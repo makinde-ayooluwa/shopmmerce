@@ -34,7 +34,7 @@ export default function Header() {
     {
       id: 2,
       title: "Categories",
-      link: "/",
+      link: "/categories",
     },
   ];
   function toggleNavbar() {
