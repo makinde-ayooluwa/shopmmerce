@@ -49,8 +49,8 @@ export default function Home() {
     if (product && !productIsInCart) {
       cart.push(product);
       localStorage.setItem("cart", JSON.stringify(cart));
-        const alertText = new Alert().success();
-        alertDisplay.current.appendChild(alertText);
+        const alertSuccess = new Alert().success(product.name);
+        alertDisplay.current.appendChild(alertSuccess);
     }
   }
 
