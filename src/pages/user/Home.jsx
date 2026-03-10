@@ -49,8 +49,11 @@ export default function Home() {
     if (product && !productIsInCart) {
       cart.push(product);
       localStorage.setItem("cart", JSON.stringify(cart));
-        const alertSuccess = new Alert().success(product.name);
-        alertDisplay.current.appendChild(alertSuccess);
+      const alertSuccess = document.createElement("div");
+      alertSuccess.className = "alert alert-success";
+      const alertText = new Alert().cartSuccess(product);
+      alertSuccess.appendChild(alertText);
+      alertDisplay.current.appendChild(alertSuccess);
     }
   }
 
@@ -64,8 +67,7 @@ export default function Home() {
           flexWrap: "wrap",
         }}
       >
-        {
-          dbProducts.map((product) => (
+        {dbProducts.map((product) => (
           <div
             style={{ flex: "0 0 auto", ...productAdditionalStyle }}
             key={product.id}
@@ -130,8 +132,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        ))
-        }
+        ))}
       </div>
     </>
   );
