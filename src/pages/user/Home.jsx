@@ -53,17 +53,34 @@ export default function Home() {
       alertSuccess.className = "alert alert-success";
       const alertText = new Alert().cartSuccess(product);
       alertSuccess.innerHTML = `
+      <i class="bi bi-check-lg"></i>
       <p>${alertText.textContent}</p>
-      <span>&times;</span>
+      <span></span>
       `;
       alertDisplay.current.appendChild(alertSuccess);
+      setTimeout(() => {
+        alertDisplay.current.removeChild(alertSuccess);
+      }, 4000);
+    } else if (productIsInCart) {
+      const alertError = document.createElement("div");
+      alertError.className = "alert alert-success";
+      const alertText = new Alert().cartError(product);
+      alertError.innerHTML = `
+      <i class="bi bi-exclamation-triangle"></i>
+      <p>${alertText.textContent}</p>
+      <span></span>
+      `;
+      alertDisplay.current.appendChild(alertError);
+      setTimeout(() => {
+        alertDisplay.current.removeChild(alertError);
+      }, 4000);
     }
   }
 
   return (
     <>
       <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <div ref={alertDisplay}>Hi</div>
+      <div ref={alertDisplay}></div>
       <div
         style={{
           display: "flex",

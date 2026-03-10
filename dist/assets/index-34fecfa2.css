@@ -1,4 +1,4 @@
-body,html{margin:0}.alert{border-radius:12px;display:block;position:fixed;width:30%;display:flex;justify-content:space-between;align-items:center;border:1px solid black;height:auto;justify-self:center;align-self:center;left:35%;top:0%;padding:10px;background:#838383;transition:top 2s ease-in-out;color:#fff}.alert::content{text-align:center}.alert-success:before{content:""}.alert span{color:#000;font-size:20px;font-weight:bolder}/*!
+body,html{margin:0}.alert{border-radius:12px;display:block;position:fixed;width:30%;display:flex;justify-content:space-between;align-items:center;border:1px solid black;height:auto;justify-self:center;align-self:center;left:35%;top:0%;padding:10px;background:#838383;transition:top 2s ease-in-out;color:#fff}.alert::content{text-align:center}.alert span{color:#000;font-size:20px;font-weight:bolder}/*!
  * Bootstrap Icons v1.13.1 (https://icons.getbootstrap.com/)
  * Copyright 2019-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/icons/blob/main/LICENSE)

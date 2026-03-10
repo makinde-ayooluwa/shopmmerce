@@ -25,9 +25,6 @@ html {
 .alert::content {
   text-align: center;
 }
-.alert-success::before {
-  content: "\f472";
-}
 
 .alert span{
   color: #000;
