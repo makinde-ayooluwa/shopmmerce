@@ -52,7 +52,10 @@ export default function Home() {
       const alertSuccess = document.createElement("div");
       alertSuccess.className = "alert alert-success";
       const alertText = new Alert().cartSuccess(product);
-      alertSuccess.appendChild(alertText);
+      alertSuccess.innerHTML = `
+      <p>${alertText.textContent}</p>
+      <span>&times;</span>
+      `;
       alertDisplay.current.appendChild(alertSuccess);
     }
   }
