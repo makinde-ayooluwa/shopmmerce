@@ -30,18 +30,25 @@ export default function Router() {
             path="/admin"
             element={
               <>
-                <div style={{
-                  display: "grid",
-                  gridTemplateColumns:"20% 80%"
-                }}>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns:
+                      innerWidth < 1025 ? "0% 100%" : "17.5% 82.5%",
+                  }}
+                >
                   <h1>Sidebar</h1>
-                  <Outlet/>
+                  <div>
+                    <h1>Header</h1>
+                    <Outlet />
+                  </div>
                 </div>
               </>
             }
           >
             <Route index element={<Dashboard />} />
-            <Route path="dashboard" element={<>Dashboard</>} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="profile" element={<h1>Profile</h1>} />
           </Route>
         </Routes>
       </BrowserRouter>
