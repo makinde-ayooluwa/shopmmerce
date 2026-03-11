@@ -81,6 +81,516 @@ export default function Home() {
     <>
       <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <div ref={alertDisplay}></div>
+      <h4>Categories</h4>
+      <div
+        style={{ display: "flex", gap: "30px", flexWrap: "wrap", padding: 30 }}
+      >
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+        <div>
+          <img
+            style={{
+              border: "1px solid black",
+              borderRadius: "50%",
+              width: "50px",
+            }}
+            src="/vite.svg"
+            alt=""
+          />
+          <p>Nails</p>
+        </div>
+      </div>
+      <h4>Products</h4>
       <div
         style={{
           display: "flex",
