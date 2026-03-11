@@ -132,7 +132,7 @@ export default function Sidebar() {
         boxShadow: "0 2px 2px rgba(0,0,0,0.2)",
         height: "100vh",
         display: "grid",
-        width: innerWidth < 1025 ? "300px" : "auto",
+        width: innerWidth < 1440 ? "300px" : "auto",
         overflowY: "scroll",
       }}
     >

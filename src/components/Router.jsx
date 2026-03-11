@@ -1,6 +1,7 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import Home from "../pages/user/Home";
 import Header from "./user/Header";
+import AdminHeader from "./admin/Header";
 import Dashboard from "../pages/admin/Dashboard";
 import Sidebar from "./admin/Sidebar";
 
@@ -36,12 +37,12 @@ export default function Router() {
                   style={{
                     display: "grid",
                     gridTemplateColumns:
-                      innerWidth < 1025 ? "0% 100%" : "17.5% 82.5%",
+                      innerWidth < 1440 ? "0% 100%" : "17.5% 82.5%",
                   }}
                 >
                   <Sidebar/>
                   <div>
-                    <h1>Header</h1>
+                    <AdminHeader />
                     <Outlet />
                   </div>
                 </div>
