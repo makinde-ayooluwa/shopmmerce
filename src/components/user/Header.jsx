@@ -36,6 +36,11 @@ export default function Header() {
       title: "Categories",
       link: "/categories",
     },
+    {
+      id: 3,
+      title: "Admin",
+      link: "/admin",
+    },
   ];
   function toggleNavbar() {
     setHeaderLinksStyle({
