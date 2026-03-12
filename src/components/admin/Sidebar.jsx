@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Sidebar() {
+export default function Sidebar({sidebarStyle, setSidebarStyle}) {
   const [openId, setOpenId] = useState(null);
 
   const toggle = (id) => {
@@ -127,15 +127,7 @@ export default function Sidebar() {
     },
   ];
   return (
-    <div
-      style={{
-        boxShadow: "0 2px 2px rgba(0,0,0,0.2)",
-        height: "100vh",
-        display: "grid",
-        width: innerWidth < 1440 ? "300px" : "auto",
-        overflowY: "scroll",
-      }}
-    >
+    <div style={sidebarStyle}>
       <div
         style={{
           display: "flex",

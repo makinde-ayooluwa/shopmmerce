@@ -26,8 +26,17 @@ html {
   text-align: center;
 }
 
-.alert span{
+.alert span {
   color: #000;
   font-size: 20px;
   font-weight: bolder;
+}
+.badge {
+  width: 7.5px;
+  height: 7.5px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateX(150%);
+  display: block;
 }

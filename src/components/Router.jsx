@@ -1,16 +1,26 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import Home from "../pages/user/Home";
 import Header from "./user/Header";
-import AdminHeader from "./admin/Header";
 import Dashboard from "../pages/admin/Dashboard";
 import Sidebar from "./admin/Sidebar";
+import { useState } from "react";
 
 export default function Router() {
+  const [sidebarStyle, setSidebarStyle] = useState({
+    boxShadow: "0 2px 2px rgba(0,0,0,0.2)",
+    height: "100vh",
+    display: "grid",
+    width: innerWidth < 1440 ? "300px" : "auto",
+    overflowY: "scroll",
+    transform: innerWidth < 1440 ? "translateX(-100%)" : "translateX(0%)",
+    transition: "all 0.75s ease-in-out",
+    background: innerWidth < 1440 ? "#ccc" : "#fff",
+  });
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="*" element={ <h1>Page not found</h1> } />
+          <Route path="*" element={<h1>Page not found</h1>} />
           <Route
             index
             element={
@@ -40,16 +50,67 @@ export default function Router() {
                       innerWidth < 1440 ? "0% 100%" : "17.5% 82.5%",
                   }}
                 >
-                  <Sidebar/>
+                  <Sidebar
+                    sidebarStyle={sidebarStyle}
+                    setSidebarStyle={setSidebarStyle}
+                  />
+                  {/* ADMIN HEADER */}
                   <div>
-                    <AdminHeader />
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        borderBottom: "1px solid",
+                        borderColor: "#000",
+                        padding: "7.5px",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* TOGGLER */}
+                      <button
+                        style={{
+                          zIndex: "20",
+                          display: innerWidth < 1440 ? "block" : "none",
+                          border: "none",
+                          background: "transparent",
+                          fontSize: "25px",
+                        }}
+                        onClick={() =>
+                          setSidebarStyle({
+                            ...sidebarStyle,
+                            transform:
+                              sidebarStyle.transform == "translateX(0%)"
+                                ? "translateX(-100%)"
+                                : "translateX(0%)",
+                          })
+                        }
+                      >
+                        <i className="bi bi-x"></i>
+                      </button>
+                      {/* OTHERS */}
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: 15
+                        }}
+                      >
+                        <div>
+                          <div className="badge"></div>
+                          <i className="bi bi-envelope"></i>
+                        </div>
+                        <div>
+                          <div className="badge"></div>
+                          <i className="bi bi-envelope"></i>
+                        </div>
+                      </div>
+                    </div>
                     <Outlet />
                   </div>
                 </div>
               </>
             }
           >
-            <Route path="*" element={ <h1>Page does not exists</h1> } />
+            <Route path="*" element={<h1>Page does not exists</h1>} />
             <Route index element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="profile" element={<h1>Profile</h1>} />
