@@ -10,11 +10,12 @@ export default function Router() {
     boxShadow: "0 2px 2px rgba(0,0,0,0.2)",
     height: "100vh",
     display: "grid",
-    width: innerWidth < 1440 ? "300px" : "auto",
+    width: innerWidth < 1440 ? "300px" : "17.5%",
     overflowY: "scroll",
     transform: innerWidth < 1440 ? "translateX(-100%)" : "translateX(0%)",
     transition: "all 0.75s ease-in-out",
     background: innerWidth < 1440 ? "#ccc" : "#fff",
+    position: "fixed",
   });
   return (
     <>
@@ -50,10 +51,12 @@ export default function Router() {
                       innerWidth < 1440 ? "0% 100%" : "17.5% 82.5%",
                   }}
                 >
-                  <Sidebar
+                  <div style={{}}>
+                    <Sidebar
                     sidebarStyle={sidebarStyle}
                     setSidebarStyle={setSidebarStyle}
                   />
+                  </div>
                   {/* ADMIN HEADER */}
                   <div>
                     <div
@@ -64,13 +67,14 @@ export default function Router() {
                         borderColor: "#000",
                         padding: "7.5px",
                         alignItems: "center",
+                        position:"sticky"
                       }}
                     >
                       {/* TOGGLER */}
                       <button
                         style={{
                           zIndex: "20",
-                          display: innerWidth < 1440 ? "block" : "none",
+                          visibility: innerWidth < 1440 ? "visible" : "hidden",
                           border: "none",
                           background: "transparent",
                           fontSize: "25px",
@@ -91,7 +95,7 @@ export default function Router() {
                       <div
                         style={{
                           display: "flex",
-                          gap: 15
+                          gap: 15,
                         }}
                       >
                         <div>
