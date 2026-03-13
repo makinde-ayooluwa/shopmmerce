@@ -98,14 +98,7 @@ export default function Router() {
                           gap: 15,
                         }}
                       >
-                        <div>
-                          <div className="badge"></div>
-                          <i className="bi bi-envelope"></i>
-                        </div>
-                        <div>
-                          <div className="badge"></div>
-                          <i className="bi bi-envelope"></i>
-                        </div>
+                        
                       </div>
                     </div>
                     <Outlet />

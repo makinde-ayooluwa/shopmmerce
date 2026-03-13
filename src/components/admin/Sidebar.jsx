@@ -14,7 +14,7 @@ export default function Sidebar({sidebarStyle, setSidebarStyle}) {
         {
           id: 1,
           title: "Overview",
-          link: "/admin",
+          link: "/admin/dashboard",
         },
       ],
     },
