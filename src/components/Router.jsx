@@ -3,7 +3,7 @@ import Home from "../pages/user/Home";
 import Header from "./user/Header";
 import Dashboard from "../pages/admin/Dashboard";
 import Sidebar from "./admin/Sidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Router() {
   const [sidebarStyle, setSidebarStyle] = useState({
@@ -17,6 +17,13 @@ export default function Router() {
     background: innerWidth < 1440 ? "#ccc" : "#fff",
     position: "fixed",
   });
+  const [search, setSearch] = useState("");
+  useEffect(() => {
+    function displaySearch() {
+      console.log(search);
+    }
+    displaySearch();
+  }, [search]);
   return (
     <>
       <BrowserRouter>
@@ -53,9 +60,9 @@ export default function Router() {
                 >
                   <div style={{}}>
                     <Sidebar
-                    sidebarStyle={sidebarStyle}
-                    setSidebarStyle={setSidebarStyle}
-                  />
+                      sidebarStyle={sidebarStyle}
+                      setSidebarStyle={setSidebarStyle}
+                    />
                   </div>
                   {/* ADMIN HEADER */}
                   <div>
@@ -67,14 +74,14 @@ export default function Router() {
                         borderColor: "#000",
                         padding: "7.5px",
                         alignItems: "center",
-                        position:"sticky"
+                        position: "sticky",
                       }}
                     >
                       {/* TOGGLER */}
                       <button
                         style={{
                           zIndex: "20",
-                          visibility: innerWidth < 1440 ? "visible" : "hidden",
+                          display: innerWidth < 1440 ? "block" : "none",
                           border: "none",
                           background: "transparent",
                           fontSize: "25px",
@@ -98,7 +105,78 @@ export default function Router() {
                           gap: 15,
                         }}
                       >
-                        
+                        <input
+                          type="text"
+                          style={{
+                            width: "300px",
+                            border: "none",
+                            background: "#cfcfcf",
+                            padding: "10px",
+                          }}
+                          value={search}
+                          placeholder="Type here to search"
+                          onChange={(e) => setSearch(e.target.value)}
+                        />
+                      </div>
+                      <div style={{ display: "flex", gap: 10 }}>
+                        {/* Notification */}
+                        <div
+                          style={{
+                            borderRadius: "50%",
+                            background: "#b2b2b2",
+                            width: "30px",
+                            height: "30px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "#fff",
+                          }}
+                        >
+                          <i className="bi bi-bell"></i>
+                        </div>
+                        {/* Messaging */}
+                        <div
+                          style={{
+                            borderRadius: "50%",
+                            background: "#b2b2b2",
+                            width: "30px",
+                            height: "30px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            color: "#fff",
+                          }}
+                        >
+                          <i className="bi bi-chat"></i>
+                        </div>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            gap: "10px",
+                          }}
+                        >
+                          <div
+                            style={{
+                              display: "grid",
+                              padding: "0px",
+                              gap: 0,
+                              textAlign: "end",
+                            }}
+                          >
+                            <h5>Cyndy Lilinbraga</h5>
+                            <small>Super Admin</small>
+                          </div>
+                          <div style={{display:"flex",justifyContent: 'center',alignItems: 'center',}}>
+                            <img
+                              src="/vite.svg"
+                              style={{ borderRadius: "50%" }}
+                              alt=""
+                            />
+                            <i className="bi bi-chevron-down"></i>
+                          </div>
+                        </div>
+                        {/*  */}
                       </div>
                     </div>
                     <Outlet />
