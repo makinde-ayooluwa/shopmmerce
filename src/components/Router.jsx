@@ -4,6 +4,7 @@ import Header from "./user/Header";
 import Dashboard from "../pages/admin/Dashboard";
 import Sidebar from "./admin/Sidebar";
 import { useEffect, useState } from "react";
+import Products from "../pages/admin/Products";
 
 export default function Router() {
   const [sidebarStyle, setSidebarStyle] = useState({
@@ -167,7 +168,13 @@ export default function Router() {
                             <h5>Cyndy Lilinbraga</h5>
                             <small>Super Admin</small>
                           </div>
-                          <div style={{display:"flex",justifyContent: 'center',alignItems: 'center',}}>
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                            }}
+                          >
                             <img
                               src="/vite.svg"
                               style={{ borderRadius: "50%" }}
@@ -188,6 +195,7 @@ export default function Router() {
             <Route path="*" element={<h1>Page does not exists</h1>} />
             <Route index element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />} />
+            <Route path="products" element={<Products />} />
             <Route path="profile" element={<h1>Profile</h1>} />
           </Route>
         </Routes>

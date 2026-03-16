@@ -70,6 +70,14 @@ export default function Dashboard() {
     display: "grid",
     padding: 20,
     color: colors.statColor,
+    border: "1px solid " + colors.statBorderColor,
+  };
+  const tableStyle = {
+    borderBottom: "1px solid #000",
+    display: "flex",
+    justifyContent: "space-between",
+    padding: 10,
+    alignItems: 'center',
   };
   return (
     <>
@@ -82,6 +90,7 @@ export default function Dashboard() {
             justifyContent: "center",
             alignItems: "center",
             marginTop: 20,
+            padding: 10,
           }}
         >
           {stats.map((stat) => (
@@ -95,50 +104,48 @@ export default function Dashboard() {
               </div>
             </div>
           ))}
-          {/* STAT 1 */}
-          {/* <div
-            style={{
-              width: "18%",
-              borderRadius: 10,
-              background: "rgba(185, 185, 185, 0.21)",
-              padding: 10,
-              display: "grid",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "5px",
-              }}
-            >
-              <h1>Total Products</h1>
-              <h1>200</h1>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 10,
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 20,
+            padding: 10,
+          }}
+        >
+          {/* Top selling products */}
+          <div style={{ ...statStyle, width: "40%" }}>
+            <div>
+              <h2>Top Selling Product</h2>
+              <table style={{ borderTop: "1px solid #000", width: "100%", alignItems:"center" }}>
+                <thead>
+                  <tr style={{ ...tableStyle, color: "#636363" }}>
+                    <th>&nbsp;</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Sold</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style={{ ...tableStyle , fontWeight:"bolder"}}>
+                    <td>
+                      <img src="/vite.svg" alt="" />
+                    </td>
+                    <td>Apple Watch Series 7</td>
+                    <td>Electronics</td>
+                    <td>$300</td>
+                    <td>26</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div>CHART</div>
-          </div> */}
-          {/* STAT 2 */}
-          {/* <div
-            style={{
-              width: "45%",
-              borderRadius: 10,
-              background: "rgba(185, 185, 185, 0.21)",
-              padding: 10,
-              display: "grid",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "5px",
-              }}
-            >
-              <h1>Total Products</h1>
-              <h1>200</h1>
-            </div>
-            <div>CHART</div>
-          </div> */}
+          </div>
+          {/* Top Rated items */}
+          <div style={{ ...statStyle, width: "40%" }}></div>
         </div>
       </div>
     </>
