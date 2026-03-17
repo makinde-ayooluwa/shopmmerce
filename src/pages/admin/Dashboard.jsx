@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { Mode } from "../../theme/Mode";
 import { Colors } from "../../constants/Colors";
 
@@ -119,8 +119,14 @@ export default function Dashboard() {
           {/* Top selling products */}
           <div style={{ ...statStyle, width: "40%" }}>
             <div>
-              <h2>Top Selling Product</h2>
-              <table style={{ borderTop: "1px solid #000", width: "100%", alignItems:"center" }}>
+              <h2 style={{ paddingBottom: 20 }}>Top Selling Product</h2>
+              <table
+                style={{
+                  borderTop: "1px solid #000",
+                  width: "100%",
+                  alignItems: "center",
+                }}
+              >
                 <thead>
                   <tr style={{ ...tableStyle, color: "#636363" }}>
                     <th>&nbsp;</th>
@@ -131,7 +137,7 @@ export default function Dashboard() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr style={{ ...tableStyle , fontWeight:"bolder"}}>
+                  <tr style={{ ...tableStyle, fontWeight: "bolder" }}>
                     <td>
                       <img src="/vite.svg" alt="" />
                     </td>
@@ -145,7 +151,39 @@ export default function Dashboard() {
             </div>
           </div>
           {/* Top Rated items */}
-          <div style={{ ...statStyle, width: "40%" }}></div>
+          <div style={{ ...statStyle, width: "40%" }}>
+            <div>
+              <h2>New Customers</h2>
+              <table
+                style={{
+                  borderTop: "1px solid #000",
+                  width: "100%",
+                  alignItems: "center",
+                }}
+              >
+                <thead>
+                  <tr style={{ ...tableStyle, color: "#636363" }}>
+                    <th>&nbsp;</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Date joined</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style={{ ...tableStyle }}>
+                    <td>
+                      <img src="/vite.svg" alt="" />
+                    </td>
+                    <td>Joh Doe</td>
+                    <td>johndoe@gmail.com</td>
+                    <td>
+                      {new Date().toLocaleDateString()}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </>
