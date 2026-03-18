@@ -1,4 +1,17 @@
+import Login from "./Login";
+import Signup from "./SignUp";
+
 export default function AuthentificationPage({ auth }) {
+  function getAuthType() {
+    switch (auth) {
+      case "login":
+        return <Login />;
+        break;
+      case "signup":
+        return <Signup />;
+        break;
+    }
+  }
   return (
     <>
       <div
@@ -10,7 +23,9 @@ export default function AuthentificationPage({ auth }) {
           justifyContent: "center",
           alignItems: "center",
         }}
-      ></div>
+      >
+        {getAuthType()}
+      </div>
     </>
   );
 }
