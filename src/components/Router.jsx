@@ -5,6 +5,7 @@ import Dashboard from "../pages/admin/Dashboard";
 import Sidebar from "./admin/Sidebar";
 import { useEffect, useState } from "react";
 import Products from "../pages/admin/Products";
+import AuthentificationPage from "../pages/user/AuthentificationPage";
 
 export default function Router() {
   const [sidebarStyle, setSidebarStyle] = useState({
@@ -39,6 +40,8 @@ export default function Router() {
               </>
             }
           />
+          <Route path="/login" element={<AuthentificationPage auth="login" />} />
+          <Route path="/signup" element={<AuthentificationPage auth="signup" />} />
           <Route
             path="/categories"
             element={
