@@ -15,9 +15,9 @@ export default function Login() {
     padding: 20,
     borderRadius: 40,
   };
-  function handleLogin(){
-    const response = axios.post(`${backendHost}/login.php`,formInputs,true);
-    const data = response.data;
+  async function handleLogin(){
+    const response = await axios.post(`${backendHost}/login.php`,formInputs,true);
+    const data = await response.data;
     console.log(data)
   }
   return (
