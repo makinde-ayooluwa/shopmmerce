@@ -1,3 +1,4 @@
+import AnimatedBackground from "../../components/user/AnimatedBackground";
 import Login from "./Login";
 import Signup from "./SignUp";
 
@@ -16,7 +17,6 @@ export default function AuthentificationPage({ auth }) {
     <>
       <div
         style={{
-          background: "rgb(255, 255, 255)",
           width: "100vw",
           height: "100vh",
           display: "flex",
@@ -24,6 +24,19 @@ export default function AuthentificationPage({ auth }) {
           alignItems: "center",
         }}
       >
+        {/* Animation */}
+        <div
+          style={{
+            position: "absolute",
+            width: "100vw",
+            height: "100vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <AnimatedBackground />
+        </div>
         {getAuthType()}
       </div>
     </>
