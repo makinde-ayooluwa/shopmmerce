@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Mode } from "./Mode";
-import useModeLocalStorage from "../hooks/useLocalStorage";
+import useModeLocalStorage from "../hooks/useModeLocalStorage";
 
 export default function ModeProvider({ children }) {
     const [mode, setMode] = useModeLocalStorage("mode");

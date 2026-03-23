@@ -1,3 +1,4 @@
+import Toaster from "../../components/Toaster";
 import AnimatedBackground from "../../components/user/AnimatedBackground";
 import Login from "./Login";
 import Signup from "./SignUp";
@@ -22,6 +23,7 @@ export default function AuthentificationPage({ auth }) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          overflow: 'hidden',
         }}
       >
         {/* Animation */}
