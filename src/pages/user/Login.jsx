@@ -27,15 +27,22 @@ export default function Login() {
       true,
     );
     const data = await response.data;
-    if (data && data.status == "error") {
+    if (data && data.status == "success") {
       setUser({ ...formInputs, password: "*************************" });
-      setLoginResponse({...data});
+      setLoginResponse({ ...data });
     }
     console.log(data);
   }
   return (
     <>
-    <p style={{color:"#fff"}}>{loginResponse == null ? "" : <Toaster status={loginResponse.status} message={loginResponse.message} />}</p>
+      {loginResponse == null ? (
+        ""
+      ) : (
+        <Toaster
+          status={loginResponse.status}
+          message={loginResponse.message}
+        />
+      )}
       <div
         style={{
           backgroundColor: "#fff",

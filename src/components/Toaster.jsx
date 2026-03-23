@@ -1,12 +1,19 @@
 import { useState } from "react";
 
-export default function Toaster({status, message}) {
+export default function Toaster({ status, message }) {
+  const backgrounds = { error: "#ff0000", success: "#0dff00" };
   const [toasterStyle, setToasterStyle] = useState({
     position: "absolute",
-    left: "90%",
+    right: "2.5%",
     top: "2.5%",
     transition: "all 0.75s ease-in-out",
-    opacity:"1",
+    opacity: "1",
+    background: backgrounds[status],
+    padding: 10,
+    width:"200px",
+    color:"#fff",
+    display:"flex",
+    justifyContent:"space-between"
   });
   return (
     <div
@@ -18,7 +25,8 @@ export default function Toaster({status, message}) {
       }
       style={toasterStyle}
     >
-      {message}
+      <i className={status == "error" ? "bi bi-exclamation-triangle" : "bi bi-check"}></i>
+      <p>{message}</p>
     </div>
   );
 }
