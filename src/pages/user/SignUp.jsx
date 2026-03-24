@@ -129,7 +129,7 @@ export default function Signup() {
               </>
             ) : (
               <>
-                <p>Signupin</p>
+                <p>Signup</p>
               </>
             )}
           </button>
