@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
 
 export default function Header() {
   const [buttonStyle, setButtonStyle] = useState({
@@ -9,12 +10,13 @@ export default function Header() {
     borderOffset: "5px",
     textDecoration: "none",
   });
+  const { user } = useContext(UserContext);
   const phoneWidth = 768;
   const [headerLinksStyle, setHeaderLinksStyle] = useState({
     display: innerWidth < phoneWidth ? "grid" : "flex",
     justifyContent: innerWidth < phoneWidth ? "center" : "",
     alignItems: "center",
-    gap: 20,
+    gap: 90,
     position: innerWidth < phoneWidth ? "absolute" : "relative",
     left: innerWidth < phoneWidth ? 0 : "",
     background: innerWidth < phoneWidth ? "#fff" : "",
@@ -35,11 +37,6 @@ export default function Header() {
       id: 2,
       title: "Categories",
       link: "/categories",
-    },
-    {
-      id: 3,
-      title: "Admin",
-      link: "/admin",
     },
   ];
   function toggleNavbar() {
@@ -74,7 +71,7 @@ export default function Header() {
               style={{
                 display: innerWidth < phoneWidth ? "grid" : "flex",
                 justifyContent: "space-between",
-                gap: 20,
+                gap: "20px",
               }}
             >
               {headerLinks.map((link) => (
@@ -103,16 +100,41 @@ export default function Header() {
                 gap: 20,
               }}
             >
-              <Link
-                style={{ ...buttonStyle, background: "#fff", color: "#000" }}
-              >
-                Sign Up
-              </Link>
-              <Link
-                style={{ ...buttonStyle, background: "#f9d800", color: "#fff" }}
-              >
-                Sign In
-              </Link>
+              {user == null ? (
+                <>
+                  <Link
+                    to="/signup"
+                    style={{
+                      ...buttonStyle,
+                      background: "#fff",
+                      color: "#000",
+                    }}
+                  >
+                    Sign Up
+                  </Link>
+                  <Link
+                    to="/login"
+                    style={{
+                      ...buttonStyle,
+                      background: "#f9d800",
+                      color: "#fff",
+                    }}
+                  >
+                    Sign In
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <img
+                    src="/vite.svg"
+                    style={{
+                      border: "1px solid black",
+                      borderRadius: "50%",
+                    }}
+                    alt=""
+                  />
+                </>
+              )}
             </div>
           </div>
           {/* Navbar Toggler */}

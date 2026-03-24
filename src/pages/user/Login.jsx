@@ -1,17 +1,18 @@
 import axios from "axios";
-import { useContext, useRef, useState } from "react";
+import { useContext, useState } from "react";
 import { backendHost } from "../../constants/backendHost";
 import Toaster from "../../components/Toaster";
 import { UserContext } from "../../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [loginResponse, setLoginResponse] = useState(null);
-  const { user, setUser } = useContext(UserContext);
-  const toasterRef = useRef();
+  const { setUser } = useContext(UserContext);
   const [formInputs, setFormInputs] = useState({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
   const inputStyle = {
     width: "300px",
     border: "1px solid #979797cb",
@@ -27,9 +28,14 @@ export default function Login() {
       true,
     );
     const data = await response.data;
-    if (data && data.status == "success") {
-      setUser({ ...formInputs, password: "*************************" });
+    if (data) {
       setLoginResponse({ ...data });
+    }
+    if (data.status == "success") {
+      setUser({ ...formInputs, password: "*************************" });
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
     }
     console.log(data);
   }
@@ -43,15 +49,6 @@ export default function Login() {
           message={loginResponse.message}
         />
       )}
-      <div
-        style={{
-          backgroundColor: "#fff",
-          position: "absolute",
-          left: "90%",
-          top: "2.5%",
-        }}
-        ref={toasterRef}
-      ></div>
       <div
         style={{
           width: "350px",
