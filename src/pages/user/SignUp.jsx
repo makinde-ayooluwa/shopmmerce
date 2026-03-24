@@ -32,6 +32,7 @@ export default function Signup() {
     const data = await response.data;
     if (data) {
       setSignupResponse({ ...data });
+      setIsSigningUp(false);
     }
     if (data.status == "success") {
       setUser({ ...formInputs, password: "*************************" });
