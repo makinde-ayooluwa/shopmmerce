@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
+import axios from "axios";
+import { backendHost } from "../../constants/backendHost";
 
 export default function Header() {
   const [buttonStyle, setButtonStyle] = useState({
@@ -49,6 +51,12 @@ export default function Header() {
           : "translateY(70%)",
     });
   }
+  async function fullUserData() {
+    const response = await axios.post(`${backendHost}/getUser.php`, user, true);
+    const resultData = await response.data;
+    return resultData;
+  }
+  const userData = fullUserData();
   return (
     <>
       <div style={{ width: "100%", boxShadow: "0 4px 15px rgba(0,0,0,0.2)" }}>
@@ -126,7 +134,9 @@ export default function Header() {
               ) : (
                 <>
                   <img
-                    src="/vite.svg"
+                    src={
+                      userData.picture !== "" ? "/vite.svg" : userData.picture
+                    }
                     style={{
                       border: "1px solid black",
                       borderRadius: "50%",

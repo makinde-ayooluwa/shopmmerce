@@ -1,9 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Search from "../../components/user/Search";
 import { products } from "../../tests/data";
 import Alert from "../../resources/Alert";
+import { UserContext } from "../../context/UserContext";
+import axios from "axios";
+import { backendHost } from "../../constants/backendHost";
 
-export default function Home() {
+export default function Home({userData}) {
   const alertDisplay = useRef(null);
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -128,6 +131,7 @@ export default function Home() {
       name: "Combs",
     },
   ];
+  
 
   return (
     <>
@@ -140,11 +144,11 @@ export default function Home() {
           gap: "30px",
           flexWrap: "nowrap",
           padding: 10,
-          overflow: 'hidden',
-          overflowX: 'scroll',
-          scrollbarColor:"transparent",
-          scrollbarWidth:"thin",
-          msScrollbarArrowColor:"transparent"
+          overflow: "hidden",
+          overflowX: "scroll",
+          scrollbarColor: "transparent",
+          scrollbarWidth: "thin",
+          msScrollbarArrowColor: "transparent",
         }}
       >
         {categories.map((category) => (

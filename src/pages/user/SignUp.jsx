@@ -9,6 +9,7 @@ export default function Signup() {
   const [signupResponse, setSignupResponse] = useState(null);
   const { setUser } = useContext(UserContext);
   const [formInputs, setFormInputs] = useState({
+    fullname:"",
     email: "",
     password: "",
   });
@@ -85,11 +86,20 @@ export default function Signup() {
           <input
             style={inputStyle}
             type="text"
+            value={formInputs.fullname}
+            onChange={(e) =>
+              setFormInputs({ ...formInputs, fullname: e.target.value })
+            }
+            placeholder="Fullname"
+          />
+          <input
+            style={inputStyle}
+            type="email"
             value={formInputs.email}
             onChange={(e) =>
               setFormInputs({ ...formInputs, email: e.target.value })
             }
-            placeholder="Email address"
+            placeholder="Email Address"
           />
           <input
             style={inputStyle}

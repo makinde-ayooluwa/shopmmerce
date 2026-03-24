@@ -3,9 +3,12 @@ import Home from "../pages/user/Home";
 import Header from "./user/Header";
 import Dashboard from "../pages/admin/Dashboard";
 import Sidebar from "./admin/Sidebar";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import axios from "axios";
+import { UserContext } from "../context/UserContext";
 import Products from "../pages/admin/Products";
 import AuthentificationPage from "../pages/user/AuthentificationPage";
+import { backendHost } from "../constants/backendHost";
 
 export default function Router() {
   const [sidebarStyle, setSidebarStyle] = useState({
@@ -26,6 +29,13 @@ export default function Router() {
     }
     displaySearch();
   }, [search]);
+  const { user, setUser } = useContext(UserContext);
+    async function fullUserData() {
+      const response = await axios.post(`${backendHost}/getUser.php`, user, true);
+      const resultData = await response.data;
+      return resultData;
+    }
+    const userData = fullUserData();
   return (
     <>
       <BrowserRouter>
@@ -36,7 +46,7 @@ export default function Router() {
             element={
               <>
                 <Header />
-                <Home />
+                <Home userData={userData} />
               </>
             }
           />
