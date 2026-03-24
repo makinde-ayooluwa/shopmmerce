@@ -32,7 +32,6 @@ export default function Signup() {
     const data = await response.data;
     if (data) {
       setSignupResponse({ ...data });
-      setIsSigningUp(false);
     }
     if (data.status == "success") {
       setUser({ ...formInputs, password: "*************************" });
@@ -41,6 +40,7 @@ export default function Signup() {
       }, 1000);
     }
     console.log(data);
+      setIsSigningUp(false);
   }
   return (
     <>

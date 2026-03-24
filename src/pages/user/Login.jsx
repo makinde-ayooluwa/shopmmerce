@@ -40,6 +40,7 @@ export default function Login() {
       }, 1000);
     }
     console.log(data);
+    setIsLoggingIn(false);
   }
   return (
     <>
