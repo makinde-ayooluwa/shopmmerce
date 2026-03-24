@@ -21,7 +21,9 @@ export default function Login() {
     padding: 15,
     borderRadius: 40,
   };
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
   async function handleLogin() {
+    setIsLoggingIn(true);
     const response = await axios.post(
       `${backendHost}/login.php`,
       formInputs,
@@ -120,7 +122,15 @@ export default function Login() {
             }}
             onClick={handleLogin}
           >
-            Login
+            {isLoggingIn == true ? (
+              <>
+                <p>Logging in ....</p>
+              </>
+            ) : (
+              <>
+                <p>Login</p>
+              </>
+            )}
           </button>
         </div>
       </div>

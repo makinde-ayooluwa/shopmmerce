@@ -21,6 +21,7 @@ export default function Signup() {
     padding: 15,
     borderRadius: 40,
   };
+  const [isSigningUp, setIsSigningUp] = useState(false);
   async function handleSignup() {
     const response = await axios.post(
       `${backendHost}/signup.php`,
@@ -119,8 +120,17 @@ export default function Signup() {
               background: "#eae",
             }}
             onClick={handleSignup}
+            disabled={isSigningUp}
           >
-            Signup
+            {isSigningUp == true ? (
+              <>
+                <p>Signing up ....</p>
+              </>
+            ) : (
+              <>
+                <p>Signup</p>
+              </>
+            )}
           </button>
         </div>
       </div>
