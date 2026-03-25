@@ -26,7 +26,7 @@ export default function Signup() {
   async function handleSignup() {
     setIsSigningUp(true);
     const response = await axios.post(
-      `${backendHost}/api/signup.php`,
+      `${backendHost}/signup.php`,
       formInputs,
       true,
     );
