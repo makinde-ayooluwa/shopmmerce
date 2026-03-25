@@ -5,14 +5,22 @@ import Alert from "../../resources/Alert";
 import { UserContext } from "../../context/UserContext";
 import axios from "axios";
 import { backendHost } from "../../constants/backendHost";
+import { Colors } from "../../constants/Colors";
+import { Mode } from "../../theme/Mode";
 
-export default function Home({userData}) {
+export default function Home({ userData }) {
+  // const [productDefaultImage, setProductDefaultImage] = useState({});
+  const { mode, setMode } = useContext(Mode);
   const alertDisplay = useRef(null);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [dbProducts, setDbProducts] = useState(products); // <-- use state
   const productGrid = () => {
-    if (innerWidth < 768) {
+    if (innerWidth < 325) {
+      return {
+        width: "100%",
+      };
+    } else if (innerWidth < 768) {
       return {
         width: "50%",
       };
@@ -131,7 +139,6 @@ export default function Home({userData}) {
       name: "Combs",
     },
   ];
-  
 
   return (
     <>
@@ -147,7 +154,7 @@ export default function Home({userData}) {
           overflow: "hidden",
           overflowX: "scroll",
           scrollbarColor: "transparent",
-          scrollbarWidth: "thin",
+          scrollbarWidth: "none",
           msScrollbarArrowColor: "transparent",
         }}
       >
@@ -171,6 +178,7 @@ export default function Home({userData}) {
         style={{
           display: "flex",
           flexWrap: "wrap",
+          rowGap: "10px",
         }}
       >
         {dbProducts.map((product) => (
@@ -178,11 +186,11 @@ export default function Home({userData}) {
             style={{ flex: "0 0 auto", ...productAdditionalStyle }}
             key={product.id}
           >
-            <div
+            {/* <div
               style={{
-                borderRadius: "12px",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+                borderRadius: "0px",
                 width: "95%",
+                border:"1px solid #000"
               }}
             >
               <div style={{ height: "200px", overflow: "hidden" }}>
@@ -235,6 +243,64 @@ export default function Home({userData}) {
                 >
                   <i className="bi bi-cart"></i>
                 </button>
+              </div>
+            </div> */}
+            <div
+              style={{
+                padding: 10,
+                borderRadius: "12px",
+                border: "0.125px solid rgba(0,0,0,0.2)",
+                width: "90%",
+                background: Colors[mode].productCardBackground,
+              }}
+            >
+              {/* Image */}
+              <div
+                style={{
+                  height: "200px",
+                  overflow: "hidden",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  background: Colors[mode].productCardImageBackground,
+                  borderRadius: "inherit",
+                }}
+              >
+                <img
+                  src={product.images[0]}
+                  style={{ display: "block", width: "auto", height: "auto" }}
+                  alt=""
+                />
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 10,
+                  overflowX: "scroll",
+                  scrollbarWidth: "none",
+                  msScrollbarBaseColor: "transparent",
+                  padding: "10px",
+                }}
+              >
+                {/* {product.images.map((image) => (
+                  <div
+                  key={image}
+                    
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      border:
+                        "1px solid " + Colors[mode].productCardImageBackground,
+                      borderRadius: "12px",
+                    }}
+                  >
+                    <img src={image} style={{ padding: 10 }} />
+                  </div>
+                ))} */}
+                <div style={{padding:5, textAlign:"start",}}>
+                  <h3 style={{color:"transparent",background:"linear-gradient(red,green)",backgroundClip:"text"}}>{product.name}</h3>
+                </div>
               </div>
             </div>
           </div>
