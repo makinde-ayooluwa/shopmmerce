@@ -31,7 +31,7 @@ export default function Router() {
   }, [search]);
   const { user, setUser } = useContext(UserContext);
     async function fullUserData() {
-      const response = await axios.post(`${backendHost}/getUser.php`, user, true);
+      const response = await axios.post(`${backendHost}/api/getUser.php`, user, true);
       const resultData = await response.data;
       return resultData;
     }
