@@ -25,7 +25,7 @@ export default function Login() {
   async function handleLogin() {
     setIsLoggingIn(true);
     const response = await axios.post(
-      `${backendHost}/login.php`,
+      `${backendHost}/api/login.php`,
       formInputs,
       true,
     );
